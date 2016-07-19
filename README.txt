@@ -1,18 +1,10 @@
-### README FILE FOR RANDOM FOREST IMPLEMENTATION ###
+REQ:
+ You need pandas_confusion, which includes pandas which you can get at https://pypi.python.org/pypi/pandas_confusion/
 
-1. A new pandas module has been implemented pandas_confusion. You must install this before the scripts will run
-
-   It can be downloaded from https://pypi.python.org/pypi/pandas_confusion/
- 
-2. Download and unzip all files into one directory.
-3. An empty __init_.py file is included as it allows for easier implementation of selected modules
-3. Open main.py in a text editor and change line 7 to reflect path directory of the downloaded files.
-4. Open a terminal and change the working directory to where the downloaded files are.
-5. In the command line type "python main.py" and press enter
-7. The output will give the following information
-	Gain of each feature if split upon [this is a list]
-	Node that data is split upon.
-	Tree stump predications - class predications based off final feature selected
-	True classes from the data set
-	Bootstrapped class predictions
+QUICK RUNDOWN:
+	Gets the information gain using Shannon-entropy down the decision tree leaves.
+	Keeps track of nodes to split on and does just that until the IG (info gain) is 1.0 (all one class).
+	Stump predictions. It will use this node to infer data about the rest of the classes.
+	It will organize the true/false ratio (though it only needs to find the amount that are true) in the final classes.
+	The classes will be tuned a little with bootstrap aggregation and a mixed bag approach i.e. a model of random entries in the data that are meant to add some variability to the predictive model in order to train on more than just the data we have. This is especially useful for smaller datasets. We assume a scenario and model based on those assumptions after some intitial training. A confusion matrix then decides which are accurate and some pruning occurs in order to not add noise.
 	 
