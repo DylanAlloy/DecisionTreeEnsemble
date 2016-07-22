@@ -3,7 +3,7 @@ from numpy import *
 class dtree:
 
 	def __init__(self):
-		# create constructor
+		"" CONSTRUCTOR ""
 
 	def read_data(self,filename):
 		fid = open(filename,"r")
