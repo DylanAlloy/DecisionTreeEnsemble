@@ -4,7 +4,7 @@ import bagging
 from pandas_confusion import BinaryConfusionMatrix
 import randomforest
 
-fn = "home/vanoccupanther/Desktop/Masters/1.4ML/L4_Assignment/politics2.csv"
+fn = ""
 tree = decisiontreeweighted.dtree()
 bagger = bagging.bagger()
 test,classes,features = tree.read_data(fn)
